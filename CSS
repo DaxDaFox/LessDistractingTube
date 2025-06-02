@@ -183,3 +183,29 @@ ytd-compact-video-renderer:hover .ytd-badge-supported-renderer.style-scope.badge
 .video-title-link:hover {
   color: #ff0000;
 }
+
+ytd-compact-video-renderer #thumbnail::before,
+ytd-rich-grid-media #thumbnail::before,
+ytd-video-renderer #thumbnail::before,
+ytd-playlist-video-renderer #thumbnail::before,
+ytd-virtual-channel-renderer #thumbnail::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  opacity: 1;
+  transition: opacity 0.3s ease-in-out;
+  pointer-events: none;
+  border-radius: 8px;
+}
+
+ytd-compact-video-renderer:hover #thumbnail::before,
+ytd-rich-grid-media:hover #thumbnail::before,
+ytd-video-renderer:hover #thumbnail::before,
+ytd-playlist-video-renderer:hover #thumbnail::before,
+ytd-virtual-channel-renderer:hover #thumbnail::before {
+  opacity: 0;
+}
